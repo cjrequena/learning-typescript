@@ -67,12 +67,14 @@ For programs to be useful, we need to be able to work with some of the simplest 
 
  - Arrays in Typescript works in the same way as they work in JavaScript
  - Same as JavaScript, TypeScript allows us to deal with arrays of values
- - Array types can be written in one of two ways. In the first, you use the type of the elements followed by [] to denote an array of that element type:
+ - Array types can be written in one of two ways. 
+ 
+ 1. In the first, you use the type of the elements followed by [] to denote an array of that element type:
  
  ```TypeScript
  let list: number[] = [1, 2, 3];
  ```
-- The second way uses a generic array type, Array<elemType>:
+2. The second way uses a generic array type, Array<elemType>:
  
  ```TypeScript
  let list: Array<number> = [1, 2, 3];
