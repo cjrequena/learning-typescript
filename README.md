@@ -14,6 +14,10 @@ The TypeScript compiler is itself written in TypeScript and compiled to JavaScri
 ## Installing Node, NPM and Typescript
 
 - Install node from https://nodejs.org/en/
+  In order to manage multiple versions of Node, I recomend install nvm, nvm is a version manager for node.js, designed to be installed per-user, and invoked per-shell. nvm works on any POSIX-compliant shell (sh, dash, ksh, zsh, bash), in particular on these platforms: unix, macOS, and windows WSL.
+  [How to install nvm](https://github.com/nvm-sh/nvm#install--update-script)
+  [nmv usage](https://github.com/nvm-sh/nvm#usage)
+  [How to install nvm with homebrew](https://www.wdiaz.org/how-to-install-nvm-with-homebrew/)  
 - Open up your terminal window/command prompt (`cmd, git bash, node command prompt`) to run some of node commands
 - Verify and check node installation/version by using command: `node -v`
 - install typescript globally by using command: `npm install -g typescript`
