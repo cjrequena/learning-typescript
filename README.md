@@ -58,6 +58,22 @@ const hello = "Hello!";
 For programs to be useful, we need to be able to work with some of the simplest units of data: numbers, strings, structures, boolean values, and the like. In TypeScript, we support much the same types as you would expect in JavaScript, with a convenient enumeration type thrown in to help things along
 
 ## Boolean
+The most basic datatype is the simple true/false value, which JavaScript and TypeScript call a boolean value.
+
+```TypeScript
+let isDone: boolean = false;
+```
+
+### Some example code with boolean
+```TypeScript
+  let flag: boolean = true;
+  if (typeof flag === "boolean") {
+    console.log(`flag variable is a ${typeof flag} type`);
+    console.log(`flag variable value is ${flag}`);
+    flag = false;
+    console.log(`Now flag variable value is ${flag}`);
+    // flag = 1; We cannot assign 0 or 1 to a boolean type.
+```
 
 ## Number
 
@@ -85,7 +101,7 @@ For programs to be useful, we need to be able to work with some of the simplest 
  let list2: [string, string, string, string] = ["JavaScript","jQuery","Angular","React"];
  let list3: Array<string> = ['C','C++','Java','Ruby','Phthon'];
  ```  
- 
+
 ## Tuple
 
 ## Enum
