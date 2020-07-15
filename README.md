@@ -80,11 +80,12 @@ For programs to be useful, we need to be able to work with some of the simplest 
  let list: Array<number> = [1, 2, 3];
  ```
 - Some examples
-   * let list1: string [] = ['JavaScript','jQuery','Angular','React'];
-   * let list2: [string, string, string, string] = ["JavaScript","jQuery","Angular","React"];
-   * let list3: Array<string> = ['C','C++','Java','Ruby','Phthon'];
-   * In the above example, we declared an array of strings by assigning it the string type (Now TypeScript will make sure the array  contains only strings)
-
+ ```TypeScript
+ let list1: string [] = ['JavaScript','jQuery','Angular','React'];
+ let list2: [string, string, string, string] = ["JavaScript","jQuery","Angular","React"];
+ let list3: Array<string> = ['C','C++','Java','Ruby','Phthon'];
+ ```  
+ 
 ## Tuple
 
 ## Enum
