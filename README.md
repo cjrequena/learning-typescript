@@ -58,6 +58,7 @@ const hello = "Hello!";
 For programs to be useful, we need to be able to work with some of the simplest units of data: numbers, strings, structures, boolean values, and the like. In TypeScript, we support much the same types as you would expect in JavaScript, with a convenient enumeration type thrown in to help things along
 
 ## Boolean
+
 The most basic datatype is the simple true/false value, which JavaScript and TypeScript call a boolean value.
 
 ```TypeScript
@@ -65,14 +66,15 @@ let isDone: boolean = false;
 ```
 
 ### Some example code with boolean
+
 ```TypeScript
-  let flag: boolean = true;
-  if (typeof flag === "boolean") {
-    console.log(`flag variable is a ${typeof flag} type`);
-    console.log(`flag variable value is ${flag}`);
-    flag = false;
-    console.log(`Now flag variable value is ${flag}`);
-    // flag = 1; We cannot assign 0 or 1 to a boolean type.
+let flag: boolean = true;
+if (typeof flag === "boolean") {
+console.log(`flag variable is a ${typeof flag} type`);
+console.log(`flag variable value is ${flag}`);
+flag = false;
+console.log(`Now flag variable value is ${flag}`);
+// flag = 1; We cannot assign 0 or 1 to a boolean type.
 ```
 
 ## Number
@@ -81,26 +83,29 @@ let isDone: boolean = false;
 
 ## Array
 
- - Arrays in Typescript works in the same way as they work in JavaScript
- - Same as JavaScript, TypeScript allows us to deal with arrays of values
- - Array types can be written in one of two ways. 
- 
- 1. In the first, you use the type of the elements followed by [] to denote an array of that element type:
- 
- ```TypeScript
- let list: number[] = [1, 2, 3];
- ```
+- Arrays in Typescript works in the same way as they work in JavaScript
+- Same as JavaScript, TypeScript allows us to deal with arrays of values
+- Array types can be written in one of two ways.
+
+1.  In the first, you use the type of the elements followed by [] to denote an array of that element type:
+
+```TypeScript
+let list: number[] = [1, 2, 3];
+```
+
 2. The second way uses a generic array type, Array<elemType>:
- 
- ```TypeScript
- let list: Array<number> = [1, 2, 3];
- ```
+
+```TypeScript
+let list: Array<number> = [1, 2, 3];
+```
+
 - Some examples
- ```TypeScript
- let list1: string [] = ['JavaScript','jQuery','Angular','React'];
- let list2: [string, string, string, string] = ["JavaScript","jQuery","Angular","React"];
- let list3: Array<string> = ['C','C++','Java','Ruby','Phthon'];
- ```  
+
+```TypeScript
+let list1: string [] = ['JavaScript','jQuery','Angular','React'];
+let list2: [string, string, string, string] = ["JavaScript","jQuery","Angular","React"];
+let list3: Array<string> = ['C','C++','Java','Ruby','Phthon'];
+```
 
 ## Tuple
 
@@ -121,6 +126,7 @@ notSure = false; // okay, definitely a boolean
 ```
 
 **Object** only allow you to assign any value to them. You can’t call arbitrary methods on them, even ones that actually exist:
+
 ```TypeScript
 let notSure: any = 4;
 notSure.ifItExists(); // okay, ifItExists might exist at runtime
@@ -129,7 +135,8 @@ notSure.toFixed(); // okay, toFixed exists (but the compiler doesn't check)
 let prettySure: Object = 4;
 prettySure.toFixed(); // Error: Property 'toFixed' doesn't exist on type 'Object'.
 ```
->Note: Avoid using Object in favor of the non-primitive object type. [Do's and Don'ts](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#general-types)
+
+> Note: Avoid using Object in favor of the non-primitive object type. [Do's and Don'ts](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#general-types)
 
 ## Void
 
