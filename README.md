@@ -69,7 +69,7 @@ The most basic datatype is the simple true/false value, which JavaScript and Typ
 let isDone: boolean = false;
 ```
 
-### Some example code with boolean
+Some example code with boolean
 
 ```TypeScript
 let flag: boolean = true;
@@ -224,6 +224,21 @@ prettySure.toFixed(); // Error: Property 'toFixed' doesn't exist on type 'Object
 > Note: Avoid using Object in favor of the non-primitive object type. [Do's and Don'ts](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#general-types)
 
 ## Void
+
+void is a little like the opposite of any: the absence of having any type at all. You may commonly see this as the return type of functions that do not return a value:
+
+```Typescript
+function warnUser(): void {
+    console.log("This is my warning message");
+}
+```
+
+Declaring variables of type void is not useful because you can only assign null (only if --strictNullChecks is not specified, see next section) or undefined to them:
+
+```Typescript
+let unusable: void = undefined;
+unusable = null; // OK if `--strictNullChecks` is not given
+```
 
 ## Null and Undefined
 
