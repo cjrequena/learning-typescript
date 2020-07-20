@@ -325,7 +325,7 @@ The two samples are equivalent. Using one over the other is mostly a choice of p
 ## Union
 
 TypeScript allows us to use more than one data type for a variable or a function parameter. This is called union type.
-_syntax_** (type1 | type2 | type3 | .. | typeN)
+_syntax_ (type1 | type2 | type3 | .. | typeN)
 
 Examples
 
