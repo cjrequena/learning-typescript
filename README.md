@@ -14,10 +14,10 @@ The TypeScript compiler is itself written in TypeScript and compiled to JavaScri
 ## Installing Node, NPM and Typescript
 
 - Install node from https://nodejs.org/en/  
-  In order to manage multiple versions of Node, I recommend installing nvm, nvm is a version manager for node.js, designed to be installed per-user, and invoked per-shell. nvm works on any POSIX-compliant shell (sh, dash, ksh, zsh, bash), in particular on these platforms: unix, macOS, and windows WSL.            
-  [How to install nvm](https://github.com/nvm-sh/nvm#install--update-script)    
-  [How to install nvm with homebrew](https://www.wdiaz.org/how-to-install-nvm-with-homebrew/)       
-  [nvm usage](https://github.com/nvm-sh/nvm#usage)      
+  In order to manage multiple versions of Node, I recommend installing nvm, nvm is a version manager for node.js, designed to be installed per-user, and invoked per-shell. nvm works on any POSIX-compliant shell (sh, dash, ksh, zsh, bash), in particular on these platforms: unix, macOS, and windows WSL.  
+  [How to install nvm](https://github.com/nvm-sh/nvm#install--update-script)  
+  [How to install nvm with homebrew](https://www.wdiaz.org/how-to-install-nvm-with-homebrew/)  
+  [nvm usage](https://github.com/nvm-sh/nvm#usage)
 - Open up your terminal window/command prompt (`cmd, git bash, node command prompt`) to run some of node commands
 - Verify and check node installation/version by using command: `node -v`
 - install typescript globally by using command: `npm install -g typescript`
@@ -100,7 +100,8 @@ Another fundamental part of creating programs in JavaScript for webpages and ser
 let color: string = "blue";
 color = 'red';
 ```
-You can also use template strings, which can span multiple lines and have embedded expressions. These strings are surrounded by the backtick/backquote (`) character, and embedded expressions are of the form ${ expr }.
+
+You can also use template strings, which can span multiple lines and have embedded expressions. These strings are surrounded by the backtick/backquote (`) character, and embedded expressions are of the form \${ expr }.
 
 ```TypeScript
 let fullName: string = `Carlos Requena`;
@@ -138,6 +139,7 @@ let list3: Array<string> = ['C','C++','Java','Ruby','Phthon'];
 ## Tuple
 
 Tuple types allow you to express an array with a fixed number of elements whose types are known, but need not be the same. For example, you may want to represent a value as a pair of a string and a number:
+
 ```TypeScript
 // Declare a tuple type
 let x: [string, number];
@@ -194,7 +196,6 @@ enum Color {Red = 1, Green, Blue}
 let colorName: string = Color[2];
 console.log(colorName); // Displays 'Green' as its value is 2 above
 ```
-
 
 ## Any
 
@@ -278,13 +279,14 @@ function infiniteLoop(): never {
     while (true) {
     }
 }
-````
+```
 
 ## Object
 
 object is a type that represents the non-primitive type, i.e. anything that is not number, string, boolean, symbol, null, or undefined.
 
 With object type, APIs like Object.create can be better represented. For example:
+
 ```TypeScript
 declare function create(o: object | null): void;
 
@@ -348,7 +350,6 @@ displayType("ABC"); // Output: Code is string.
 displayType(true); //Compiler Error: Argument of type 'true' is not assignable to a parameter of type string | number
 ```
 
-
 ## Literal
 
 Literals are exact values that are JavaScript primitives and that are assigned to variables when declared. In literal types you are sure or you already know in development time the exact value or values that a variable will hold.
@@ -376,6 +377,7 @@ const enum HttpPort {
 }
 
 ```
+
 Literal types are not very useful on their own but can be combined in a type union to create a powerful (and useful) abstraction e.g:
 
 ```TypeScript
@@ -448,6 +450,7 @@ var s = people.next.next.next.name;
 ```
 
 However, it’s not possible for a type alias to appear anywhere else on the right side of the declaration:
+
 ```TypeScript
 type Yikes = Array<Yikes>; // error
 ```
@@ -469,4 +472,83 @@ type MyCoordinates = [number, number];
 type Callback = (data: string) => void;
 ```
 
+## Function Type
 
+Functions are the fundamental building block of any application in JavaScript. They’re how you build up layers of abstraction, mimicking classes, information hiding, and modules. In TypeScript, while there are classes, namespaces, and modules, functions still play the key role in describing how to do things.
+
+TypeScript also adds some new capabilities to the standard JavaScript functions to make them easier to work with.
+
+To begin, just as in JavaScript, TypeScript functions can be created both as a named function or as an anonymous function. This allows you to choose the most appropriate approach for your application, whether you’re building a list of functions in an API or a one-off function to hand off to another function.
+
+**Examples**
+
+```TypeScript
+// Named function
+  function add(x: number, y: number): number {
+    return x + y;
+  }
+
+  // Anonymous function
+  let add1 = function (x: number, y: number) {
+    return x + y;
+  };
+
+  //
+  function add2(x: number, y: number): number {
+    return x + y;
+  }
+
+  //
+  let add3 = function (x: number, y: number): number {
+    return x + y;
+  };
+
+  //
+  let add4: (x: number, y: number) => number = function (x: number,y: number): number {
+    return x + y;
+  };
+
+  // myAdd has the full function type
+  let add5 = function (x: number, y: number): number {
+    return x + y;
+  };
+
+  // The parameters 'x' and 'y' have the type number
+  let add6: (baseValue: number, increment: number) => number = function (x,y) {
+    return x + y;
+  };
+
+  //
+  let add7 = function (x: number, y: number, cb: (x: number, y: number) => number): number {
+    return cb(x, y);
+  };
+  
+  //
+  let add8 = (x: number, y: number, cb: (x: number, y: number) => number): number => {
+    return add7(x, y, add6);
+  };
+
+  //
+  type AddFunctionType1 = (x: number, y: number) => number;
+
+  //
+  let add9: AddFunctionType1 = (x:number, y:number)=>{
+      return (x+y);
+  };
+
+  //
+  let printResult = (functionName:string, result:number): void =>{
+    console.log(`${functionName} -> ${result}`);
+  }
+
+  printResult("add",add(2,2));
+  printResult("add1",add1(2,2));
+  printResult("add2",add2(2,2));
+  printResult("add3",add3(2,2));
+  printResult("add4",add4(2,2));
+  printResult("add5",add5(2,2));
+  printResult("add6",add6(2,2));
+  printResult("add7",add7(2,2,add6));
+  printResult("add8",add8(2,2,add6));
+  printResult("add9",add9(3,3));
+```
