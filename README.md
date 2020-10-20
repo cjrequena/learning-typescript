@@ -552,3 +552,69 @@ To begin, just as in JavaScript, TypeScript functions can be created both as a n
   printResult("add8",add8(2,2,add6));
   printResult("add9",add9(3,3));
 ```
+
+# Typescript Operators
+
+An Operator is a symbol which operates on a value or data. It represents a specific action on working with data. The data on which operators operates is called operand. It can be used with one or more than one values to produce a single value. All of the standard JavaScript operators are available with the TypeScript program.
+
+**Example**
+```TypeScript
+3 + 6 + 9 = 18;
+```
+
+## Arithmetic Operators
+Arithmetic operators take numeric values as their operands, performs an action, and then returns a single numeric value. The most common arithmetic operators are addition(+), subtraction(-), multiplication(*), and division(/).
+
+**Addition**
+```TypeScript
+let a = 3;
+let b = 6;
+let c = a + b;
+console.log( c );
+```
+
+**Subtraction**
+```TypeScript
+let a = 3;
+let b = 6;
+let c = a - b;
+console.log( c );
+```
+
+**Multiplication**
+```TypeScript
+let a = 3;
+let b = 6;
+let c = a * b;
+console.log( c );
+```
+
+**Division**
+```TypeScript
+let a = 3;
+let b = 6;
+let c = a / b;
+console.log( c );
+```
+
+**Modulus - It performs the division operation and returns the remainder.**
+```TypeScript
+let a = 3;
+let b = 6;
+let c = a % b;
+console.log( c );
+```
+
+**Increment**
+```TypeScript
+let a = 35;
+a++;
+console.log( a );
+```
+
+**Decrement**
+```TypeScript
+let a = 37;
+a--
+console.log( a );
+```
