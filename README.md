@@ -25,6 +25,17 @@ The TypeScript compiler is itself written in TypeScript and compiled to JavaScri
 - Verify typescript Installation and version both with command: `tsc -v` or `tsc --version`
 - Install and use some text editor or IDE (Integrated Development Environment) like `Notepad++, Sublime Text, Adobe Brackets, Visual Studio Code` to type code
 
+## Installing lite-server
+[How to install lite-server](https://www.npmjs.com/package/lite-server)
+
+## Running the sample code
+Navigate to the root folder and then execute the following commands on a terminal.
+
+```sh
+$ tsc --watch # Transpiles the typescrypt code
+$ npm start # Start the 
+```
+
 # Variable Declarations
 
 [Typescript Variable Declarations](https://www.typescriptlang.org/docs/handbook/variable-declarations.html)
