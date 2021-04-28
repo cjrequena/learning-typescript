@@ -32,6 +32,7 @@ The TypeScript compiler is itself written in TypeScript and compiled to JavaScri
 Navigate to the root folder and then execute the following commands on a terminal.
 
 ```sh
+$ npm install # npm install (in a package directory, no arguments): Install the dependencies in the local node_modules folder. In global mode (ie, with -g or --global appended to the command), it installs the current package context (ie, the current working directory) as a global package.
 $ tsc --watch # Transpiles the typescrypt code
 $ npm start # Start the 
 ```
