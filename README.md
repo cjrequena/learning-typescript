@@ -566,6 +566,7 @@ To begin, just as in JavaScript, TypeScript functions can be created both as a n
 ```
 
 # Typescript Operators
+[tutorialspoint typscript::operators](https://www.tutorialspoint.com/typescript/typescript_operators.htm)
 
 An Operator is a symbol which operates on a value or data. It represents a specific action on working with data. The data on which operators operates is called operand. It can be used with one or more than one values to produce a single value. All of the standard JavaScript operators are available with the TypeScript program.
 
@@ -629,4 +630,17 @@ console.log( a );
 let a = 37;
 a--
 console.log( a );
+```
+
+## Relational Operators
+Relational Operators test or define the kind of relationship between two entities. Relational operators return a Boolean value, i.e., true/ false.
+```TypeScript
+let a = 10;
+let b = 20;
+console.log(a > b) // false
+console.log(a < b) // true
+console.log(a >= b) // false
+console.log(a <= b) // true
+console.log(a == b) // false
+console.log(a != b) // true
 ```
