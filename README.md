@@ -40,6 +40,14 @@ $ npm start
 $ curl --location 'http://localhost:3000/public/index.html'
 ```
 
+or
+
+```sh
+npm run build
+npm run run watch
+npm run start
+```
+
 
 # Variable Declarations
 
